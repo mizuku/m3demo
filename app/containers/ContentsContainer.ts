@@ -21,7 +21,7 @@ const mapStateToProps = (state: AppState): ContentsProps => {
                 // 検索文字列によるフィルタリング
                 if (0 < state.transition.splitSearchText.length) {
                     f = state.transition.splitSearchText.every((vv) => {
-                        return -1 < v.demo.circle.indexOf(vv);
+                        return -1 < v.demo.circle.toLocaleLowerCase().indexOf(vv.toLocaleLowerCase());
                     });
                 } else {
                     f = true;
