@@ -1,0 +1,42 @@
+{
+  "name": "m3demo-playlist",
+  "version": "0.1.0",
+  "description": "m3 demo API playlist.",
+  "main": "public/scripts/bundle.js",
+  "scripts": {
+    "build:pro": "gulp rebuild:pro",
+    "build:dev": "gulp rebuild:dev",
+    "clean": "gulp clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mizuku",
+  "license": "MIT",
+  "dependencies": {
+    "es6-promise": "^3.2.1",
+    "react": "^15.1.0",
+    "react-addons-css-transition-group": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0",
+    "superagent": "^2.0.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "appcache-webpack-plugin": "^1.2.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.13.6",
+    "redux-devtools": "^3.3.1",
+    "ts-loader": "^0.8.2",
+    "typescript": "^2.0.6",
+    "vinyl-source-stream": "^1.1.0",
+    "webpack": "^1.13.1",
+    "webpack-stream": "^3.2.0"
+  }
+}

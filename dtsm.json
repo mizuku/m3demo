@@ -1,0 +1,48 @@
+{
+  "repos": [
+    {
+      "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+      "ref": "master"
+    }
+  ],
+  "path": "typings",
+  "bundle": "typings/bundle.d.ts",
+  "link": {
+    "npm": {
+      "include": true
+    }
+  },
+  "ambientDependencies": {},
+  "dependencies": {
+    "react/react.d.ts": {
+      "ref": "c3daad4d0547d301ce5dad25138216fa0a30d547"
+    },
+    "react/react-dom.d.ts": {
+      "ref": "c3daad4d0547d301ce5dad25138216fa0a30d547"
+    },
+    "underscore/underscore.d.ts": {
+      "ref": "c3daad4d0547d301ce5dad25138216fa0a30d547"
+    },
+    "redux/redux.d.ts": {
+      "ref": "c3daad4d0547d301ce5dad25138216fa0a30d547"
+    },
+    "react-redux/react-redux.d.ts": {
+      "ref": "c3daad4d0547d301ce5dad25138216fa0a30d547"
+    },
+    "superagent/superagent.d.ts": {
+      "ref": "c3daad4d0547d301ce5dad25138216fa0a30d547"
+    },
+    "redux-thunk/redux-thunk.d.ts": {
+      "ref": "c3daad4d0547d301ce5dad25138216fa0a30d547"
+    },
+    "es6-promise/es6-promise.d.ts": {
+      "ref": "c3daad4d0547d301ce5dad25138216fa0a30d547"
+    },
+    "material-design-lite/material-design-lite.d.ts": {
+      "ref": "c3daad4d0547d301ce5dad25138216fa0a30d547"
+    },
+    "react/react-addons-css-transition-group.d.ts": {
+      "ref": "c3daad4d0547d301ce5dad25138216fa0a30d547"
+    }
+  }
+}

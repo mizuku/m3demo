@@ -1,0 +1,22 @@
+@import "_vars";
+@import "_mixin";
+
+html, body {
+    font-family: $font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family;
+}
+
+h1, h2, h3 {
+    font-size: $font-size-large;
+}
+
+h4, h5, h6 {
+    font-size: $font-size-normal;
+}
+
+.mdl-textfield__input {
+    font-family: $font-family;
+}

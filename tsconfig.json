@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "rootDir": "app",
+        "outDir": ".jsdest",
+        "jsx": "react",
+        "sourceMap": true,
+        "removeComments": true,
+        "moduleResolution": "node"
+    },
+    "filesGlob": [
+        "typings/bundle.d.ts",
+        "node_soundcloud.d.ts",
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

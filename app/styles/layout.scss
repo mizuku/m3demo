@@ -1,0 +1,218 @@
+@import "_vars";
+@import "_mixin";
+
+/*#region Override mdl default style */
+.mdl-layout-title {
+    font-family: $font-family;
+    font-size: $font-size-large;
+}
+
+.mdl-layout__content .card__section {
+    margin-bottom: $card-spacing;
+}
+
+.mdl-layout__drawer-button:focus {
+    outline: none;
+}
+
+.mdl-textfield .mdl-button {
+    bottom: 16px;
+}
+
+.demo-header.mdl-layout__header--waterfall {
+    overflow: visible;
+}
+
+.demo-menu__label.mdl-menu__item, .demo-menu__label.mdl-menu__item:disabled {
+    font-weight: 600;
+    color: hsl(0, 0, 0);
+}
+
+/*#endregion Override mdl default style */
+
+.material-icons.star {
+    color: $star-color;
+}
+
+.demo-header__search-textfield {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1;
+    margin-right: 24px;
+}
+
+.demo-header__search-textfield-label {
+    top: 4px;
+
+    &:after {
+        background-color: hsl(0, 0, 255);
+    }
+}
+
+.demo-header__more-button {
+    -webkit-order: 2;
+    -ms-flex-order: 2;
+    order: 2;
+}
+
+.demo-drawer__title {
+    background-color: $primary-color;
+    color: hsl(0, 0, 100%)
+}
+
+.demo-drawer__section:after {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 8px 0 0;
+    display: block;
+    content: " ";
+}
+
+.demo-drawer__section-title {
+    color: $primary-color;
+    padding-left: 12px;
+}
+
+.demo-drawer__section-title-icon {
+    vertical-align: middle;
+}
+.demo-drawer__section-title-text {
+    vertical-align: middle;
+}
+
+.demo-drawer__section-title-switch {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.demo-drawer__favorite-memo {
+    display: inline-block;
+    padding: 0 12px;
+    font-size: $font-size-small;
+    color: $font-color-thin;
+}
+
+.demo-drawer__separator {
+    height: 1px;
+    background-color: #dcdcdc;
+    margin: 8px 0;
+}
+
+.demo-content__wrapper {
+    padding-top: $card-spacing;
+}
+
+.demo-event-dropdown {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 80%;
+    padding-left: 20%;
+}
+
+.demo-menu__item--is-selected {
+    background-color: $accent-color;
+}
+
+.demo-menu__item--is-selected:hover {
+    background-color: $accent-color--hover;
+}
+
+.demo-space-selector {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.demo-pagination__container {
+    width: 100%;
+    max-width: $pagination-max-width;
+    padding: 0 0 40px 0;
+}
+
+.demo-pagination__cell {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: right;
+    -ms-flex-align: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.demo-pagination__back-btn-container {
+    -webkit-flex-grow: 2;
+    flex-grow: 2;
+}
+
+.demo-pagination__forward-btn-container {
+    -webkit-flex-grow: 2;
+    flex-grow: 2;
+    text-align: right;
+}
+
+.demo-pagination__page-link {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.demo-pagination__page-link--is-current {
+    font-size: $font-size-large;
+
+    &.mdl-button[disabled] {
+        color: $primary-color;
+    }
+}
+
+.demo-pagination__last-page-link-1,
+.demo-pagination__last-page-link-2 {
+    display: none;
+}
+
+@media (max-width: 640px) {
+
+    .demo-header__title {
+        display: none;
+    }
+
+
+    .demo-pagination__page-link-range-2 {
+        display: none;
+    }
+
+    .demo-pagination__last-page-link-2 {
+        display: inline-block;
+    }
+
+    .demo-pagination__last-page-link-2-spacer {
+        display: none;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .demo-pagination__page-link-range-1 {
+        display: none;
+    }
+
+    .demo-pagination__last-page-link-1 {
+        display: inline-block;
+    }
+
+    .demo-pagination__last-page-link-1-spacer {
+        display: none;
+    }
+
+}
