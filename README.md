@@ -6,4 +6,4 @@
 http://www.m3net.jp/cgi/about_API.html
 
 ## License
-MIT
+This software is released under the MIT License, see LICENSE.
