@@ -29,7 +29,7 @@ export class SpaceSelectorItem extends React.Component<SpaceSelectorItemProps,an
                     {this.props.spaceInitials}
                 </span>
                 <span className="mdl-list__item-secondary-action">
-                    <label className="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                    <label className="mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-switch--accent"
                         htmlFor={`space-switch-${this.props.spaceInitials}`}>
                         <input type="checkbox" id={`space-switch-${this.props.spaceInitials}`}
                             className="mdl-switch__input"

@@ -147,7 +147,7 @@ export class Drawer extends React.Component<DrawerProps,any> {
                         <i className="material-icons star demo-drawer__section-title-icon">star</i>
                         <span className="demo-drawer__section-title-text">お気に入り</span>
                         <span className="demo-drawer__section-title-switch">
-                            <label className="mdl-switch mdl-js-switch mdl-js-ripple-effect"
+                            <label className="mdl-switch mdl-js-switch mdl-js-ripple-effect mdl-switch--accent"
                                 htmlFor="drawer-switch-favorite">
                                 <input type="checkbox" id="drawer-switch-favorite"
                                     className="mdl-switch__input"

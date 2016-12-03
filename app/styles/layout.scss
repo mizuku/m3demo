@@ -28,6 +28,18 @@
     color: hsl(0, 0, 0);
 }
 
+/*#region switch color */
+.mdl-switch.mdl-switch--accent.is-checked .mdl-switch__track {
+    background: hsla(150, 81%, 67%, 0.5);
+}
+.mdl-switch.mdl-switch--accent.is-checked .mdl-switch__thumb {
+    background: $accent-color;
+}
+.mdl-switch--accent .mdl-switch__ripple-container .mdl-ripple {
+    background: $accent-color;
+}
+/*#endregion switch color */
+
 /*#endregion Override mdl default style */
 
 .material-icons.star {
