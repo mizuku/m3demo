@@ -89,15 +89,6 @@ export class Header extends React.Component<HeaderProps,any> {
                         menuLabel="1ページに表示する数"
                         items={this.displayPerPageItems}
                         selectionChanged={this.onPerPageChanged} />
-                    {/*
-                    <ul className="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect"
-                        htmlFor="demo-header-more-button">
-                        <li className="demo-menu__label mdl-menu__item" disabled>1ページに表示する数</li>
-                        <li className="mdl-menu__item">5</li>
-                        <li className="mdl-menu__item">10</li>
-                        <li className="mdl-menu__item">20</li>
-                    </ul>
-                    */}
                 </div>
             </header>
         );
