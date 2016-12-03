@@ -5,6 +5,7 @@
 以下のページに記載があります。  
 http://www.m3net.jp/cgi/about_API.html    
 なお、このアプリケーションを使用したことにより発生した問題についてM3準備会様へ問い合わせることはおやめください。
+- 2016春のデータについては破損が見受けられるため、選択から除外しています。
 
 ## License
 This software is released under the MIT License, see [LICENSE](./LICENSE).
