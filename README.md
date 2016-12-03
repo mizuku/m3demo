@@ -1,11 +1,13 @@
 # M3 demo list player
 音系・メディアミックス同人即売会 M3 ( http://www.m3net.jp/ ) で公開されている試聴音源APIから取得した音源を再生するWebアプリケーションです。
 
+
 ## 試聴音源APIについて
 以下のページに記載があります。  
 http://www.m3net.jp/cgi/about_API.html    
 なお、このアプリケーションを使用したことにより発生した問題についてM3準備会様へ問い合わせることはおやめください。
 - 2016春のデータについては破損が見受けられるため、選択から除外しています。
+
 
 ## 機能
 主な機能は以下のとおりになります。
@@ -21,6 +23,7 @@ http://www.m3net.jp/cgi/about_API.html
   - お気に入りした楽曲情報はブラウザに保存されます。
   - 異なる端末、ブラウザ間で共有することはできません。
   - （わかる人向けに）LocalStorageを使用しています。サーバーには一切保存していません。
+
 
 ## License
 This software is released under the MIT License, see [LICENSE](./LICENSE).
