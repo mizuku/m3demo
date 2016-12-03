@@ -83,7 +83,7 @@ gulp.task("bundle:pro", ["extlib"], () => {
 });
 
 /* scss */
-gulp.task("scss:compile", () => {
+gulp.task("scss:dev", () => {
     return gulp.src([
         `${path.scssroot}/styles.scss`
     ], { base: path.scssroot })
@@ -92,6 +92,16 @@ gulp.task("scss:compile", () => {
         .pipe(concat("styles.scss"))
         .pipe(sass({ outputStyle: "compressed" }))
         .pipe(sourcemaps.write("./"))
+        .pipe(gulp.dest(path.public))
+        ;
+});
+gulp.task("scss:pro", () => {
+    return gulp.src([
+        `${path.scssroot}/styles.scss`
+    ], { base: path.scssroot })
+        .pipe(plumber())
+        .pipe(concat("styles.scss"))
+        .pipe(sass({ outputStyle: "compressed" }))
         .pipe(gulp.dest(path.public))
         ;
 });
@@ -125,7 +135,7 @@ gulp.task("config:copy", () => {
 /* csslib */
 gulp.task("csslib:copy", ["extlib"], () => {
     return gulp.src([
-        "extlib/**/*.css"
+        `${path.extlib}/**/*.css`
     ])
         .pipe(gulp.dest(path.public))
     ;
@@ -138,7 +148,7 @@ gulp.task("ts:watch", () => {
 });
 /* scss watch */
 gulp.task("scss:watch", () => {
-    gulp.watch(`${path.scssroot}/**/*.scss`, ["scss:compile"]);
+    gulp.watch(`${path.scssroot}/**/*.scss`, ["scss:dev"]);
 });
 /* html watch */
 gulp.task("html:watch", () => {
@@ -154,7 +164,7 @@ gulp.task("watch", ["ts:watch", "scss:watch", "html:watch", "config:watch"]);
 
 /* development build */
 gulp.task("build:dev",
-    ["bundle:dev", "scss:compile", "html:dest", "image:dest",
+    ["bundle:dev", "scss:dev", "html:dest", "image:dest",
      "config:copy", "csslib:copy"]);
 gulp.task("rebuild:dev", ["clean"], () => {
     gulp.run("build:dev");
@@ -162,7 +172,7 @@ gulp.task("rebuild:dev", ["clean"], () => {
 
 /* production build */
 gulp.task("build:pro",
-    ["bundle:pro", "scss:compile", "html:dest", "image:dest",
+    ["bundle:pro", "scss:pro", "html:dest", "image:dest",
      "config:copy", "csslib:copy"]);
 gulp.task("rebuild:pro", ["clean"], () => {
     gulp.run("build:pro");
