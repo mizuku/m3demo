@@ -12,7 +12,7 @@ http://www.m3net.jp/cgi/about_API.html
 - 音源の一覧表示
   - Youtube/SoundCloud/MP3 に対応しています。
   - ニコニコ動画は外部プレイヤーの設置が困難のため、現時点で対応する予定はありません。
-  - WAV/AIF/MOV は再生できないかもしれません。MP3を推奨します。
+  - WAV/AIF/MOV は再生できないかもしれません。代替として Youtube/SoundCloud/MP3 を推奨します。
 - 音源一覧の絞り込み（フィルタ）
   - サークルスペースの頭文字で絞り込み。
   - サークル名でテキスト検索。
