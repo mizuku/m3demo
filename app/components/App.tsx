@@ -2,6 +2,7 @@ import * as React from "react"
 import HeaderContainer from "../containers/HeaderContainer"
 import DrawerContainer from "../containers/DrawerContainer"
 import ContentsContainer from "../containers/ContentsContainer"
+import FooterContainer from "../containers/FooterContainer"
 
 export interface AppProps extends React.Props<any> {
     onAppLoad?: Function;
@@ -32,6 +33,7 @@ export class App extends React.Component<AppProps, any> {
                     <HeaderContainer />
                     <DrawerContainer />
                     <ContentsContainer />
+                    <FooterContainer />
                 </div>
             </div>
         );
