@@ -57,7 +57,7 @@ const mapDispatchToProps = (dispatch:Redux.Dispatch<AppState>): ContentsProps =>
         changeFavorite: (eventId: number, demo: Demo, isFavorite: boolean) => {
             dispatch(favorite.changeFavorite(eventId, demo, isFavorite));
         }
-    }
+    };
 }
 
 export default connect(

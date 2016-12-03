@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch:Redux.Dispatch<AppState>): AppProps => {
         getToken: () => {
             dispatch(app.getTokenAsync());
         }
-    }
+    };
 }
 
 export default connect(

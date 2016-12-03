@@ -24,7 +24,7 @@ const mapDispatchToProps = (dispatch:Redux.Dispatch<AppState>): HeaderProps => {
         displayPerPageChanged: (num: number) => {
             dispatch(search.changeDisplayPerPage(num));
         }
-    }
+    };
 }
 
 export default connect(

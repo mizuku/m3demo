@@ -36,7 +36,7 @@ export class YoutubePlayer extends React.Component<YoutubePlayerProps, any> {
         let demo = this.props.demo;
         if (!demo.isTryEmbedUrl) {
             // 埋め込みプレイヤーを取得していないので何も表示しない
-            return (<p></p>);
+            return (<span></span>);
         } else if (this.props.demo.isTryEmbedUrl && !this.props.demo.embedUrl) {
             // 埋め込みプレイヤーの取得に失敗している
             return (
