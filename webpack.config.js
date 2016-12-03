@@ -2,7 +2,10 @@
 let webpack = require("webpack");
 
 module.exports = {
-    entry: "./app/index.ts",
+    entry: [
+        "./app/index.ts",
+        "./.extlib/mdl-selectfield.min.js"
+    ],
     output: {
         path: "/public/scripts/",
         publicPath: "/",

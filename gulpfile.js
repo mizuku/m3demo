@@ -21,6 +21,7 @@ let path = {
     approot: approot,
     scssroot: `${approot}/styles`,
     config: "config",
+    extlib: ".extlib",
     jsdest: jsdest,
     public: pub,
     jspub: `${pub}/scripts`
@@ -29,7 +30,8 @@ let path = {
 /* clean */
 function _clean() {
     return del([
-        `${path.public}/**/*`
+        `${path.public}/**/*`,
+        `${path.extlib}/**/*`
     ]);
 }
 gulp.task("clean", _clean);
@@ -49,24 +51,34 @@ gulp.task("ts:compile", () => {
     ;
 })
 
+/* copy from node_modules to extlib */
+gulp.task("extlib", () => {
+    return gulp.src([
+        "node_modules/mdl-select-component/mdl-selectfield.min.js",
+        "node_modules/mdl-select-component/mdl-selectfield.min.css",
+    ])
+        .pipe(gulp.dest(path.extlib))
+    ;
+});
+
 /* bundle(This task ts compile and js bundle) */
-gulp.task("bundle:dev", () => {
+gulp.task("bundle:dev", ["extlib"], () => {
     let config = require("./webpack.config.js");
     return gulp.src([
         `${path.approot}/index.ts`
     ])
         .pipe(webpack(config))
-        .pipe(gulp.dest(`${path.jspub}`))
+        .pipe(gulp.dest(path.jspub))
     ;
 });
 
-gulp.task("bundle:pro", () => {
+gulp.task("bundle:pro", ["extlib"], () => {
     let config = require("./webpack-production.config.js");
     return gulp.src([
         `${path.approot}/index.ts`
     ])
         .pipe(webpack(config))
-        .pipe(gulp.dest(`${path.jspub}`))
+        .pipe(gulp.dest(path.jspub))
     ;
 });
 
@@ -110,6 +122,15 @@ gulp.task("config:copy", () => {
     ;
 })
 
+/* csslib */
+gulp.task("csslib:copy", ["extlib"], () => {
+    return gulp.src([
+        "extlib/**/*.css"
+    ])
+        .pipe(gulp.dest(path.public))
+    ;
+})
+
 /* watch */
 /* ts watch */
 gulp.task("ts:watch", () => {
@@ -132,13 +153,17 @@ gulp.task("watch", ["ts:watch", "scss:watch", "html:watch", "config:watch"]);
 
 
 /* development build */
-gulp.task("build:dev", ["bundle:dev", "scss:compile", "html:dest", "image:dest", "config:copy"]);
+gulp.task("build:dev",
+    ["bundle:dev", "scss:compile", "html:dest", "image:dest",
+     "config:copy", "csslib:copy"]);
 gulp.task("rebuild:dev", ["clean"], () => {
     gulp.run("build:dev");
 });
 
 /* production build */
-gulp.task("build:pro", ["bundle:pro", "scss:compile", "html:dest", "image:dest", "config:copy"]);
+gulp.task("build:pro",
+    ["bundle:pro", "scss:compile", "html:dest", "image:dest",
+     "config:copy", "csslib:copy"]);
 gulp.task("rebuild:pro", ["clean"], () => {
     gulp.run("build:pro");
 });

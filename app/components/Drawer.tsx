@@ -71,10 +71,10 @@ export class Drawer extends React.Component<DrawerProps,any> {
     }
 
     /**
-     * イベントを変更したときのイベント
-     * @param value 選択したイベントのイベントID
+     * 即売会を変更したときのイベント
      */
-    protected eventSelectionChanged = (value: string) => {
+    protected eventSelectionChanged = (ev: React.FormEvent) => {
+        let value = (ev.target as HTMLSelectElement).value;
         let eventId = parseInt(value);
         if (eventId !== this.props.currentEventId) {
             this.props.changeEvent(eventId);
@@ -110,7 +110,7 @@ export class Drawer extends React.Component<DrawerProps,any> {
                 <section className="demo-drawer__section accordion"
                     key="spaceSelectors"
                     ref="$space-selector">
-                    <h5 className="demo-drawer__section-title">サークルスペースを選ぶ</h5>
+                    <h5 className="demo-drawer__section-title">サークルスペース</h5>
                     <SpaceSelector
                         eventId={this.props.currentEventId}
                         spaceInitials={this.props.spaceInitials}
@@ -122,24 +122,26 @@ export class Drawer extends React.Component<DrawerProps,any> {
                 </section>
             );
         }
+        let eventItems = this.props.events.map(e => {
+            let isSelected = e.eventId == this.props.currentEventId;
+            return (
+                <option key={e.eventId} value={`${e.eventId}`} selected={isSelected}>{e.eventName}</option>
+            );
+        });
         return (
             <div className="demo-drawer mdl-layout__drawer">
                 <span className="demo-drawer__title mdl-layout-title">M3 Demo Playlist</span>
                 <section className="demo-drawer__section">
-                    <h5 className="demo-drawer__section-title">即売会を選ぶ</h5>
+                    <h5 className="demo-drawer__section-title">即売会</h5>
                     <div className="demo-event-dropdown">
-                        <span>{currentEventName}</span>
-                        <div className="mdl-layout-spacer"></div>
-                        <button id="event-selector-btn"
-                            className="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-                            <i className="material-icons" role="presentation">arrow_drop_down</i>
-                            <span className="visuallyhidden">Events</span>
-                        </button>
-                        <Menu forName="event-selector-btn"
-                            items={this.eventItems}
-                            selectedValue={this.props.currentEventId.toString()}
-                            selectionChanged={this.eventSelectionChanged}
-                            />
+                        <div className="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                            <select id="event-selector"
+                                className="mdl-selectfield__select"
+                                onChange={this.eventSelectionChanged}>
+                                {eventItems}
+                            </select>
+                            <label className="mdl-selectfield__label" for="event-selector">即売会を選択</label>
+                        </div>
                     </div>
                 </section>
                 <section className="demo-drawer__section">
