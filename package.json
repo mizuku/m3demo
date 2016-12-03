@@ -1,6 +1,6 @@
 {
   "name": "m3demo-playlist",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "M3 demo API playlist.",
   "main": "public/scripts/bundle.js",
   "scripts": {

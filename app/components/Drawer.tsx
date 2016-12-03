@@ -1,6 +1,7 @@
 import * as React from "react"
 import * as ReactCSSTransitionGroup from "react-addons-css-transition-group"
 
+import * as Const from "../constants"
 import { AppSaleEvent } from "../models/M3State"
 
 import { SpaceSelector } from "./SpaceSelector"
@@ -33,18 +34,9 @@ export class Drawer extends React.Component<DrawerProps,any> {
         super(props, context);
     }
 
-    protected eventItems: MenuItem[] = [];
     private onFirstLoaded: boolean = false;
 
     /* component lifecycle */
-    componentWillMount = () => {
-        this.eventItems = this.props.events.map(this.appEventToEventItem);
-    }
-
-    componentWillUpdate = (nextProps: DrawerProps, nextState: any) => {
-        this.eventItems = nextProps.events.map(this.appEventToEventItem);
-    }
-
     componentDidUpdate = () => {
         let selectorElem = this.refs["$space-selector"];
         if (!!selectorElem && selectorElem instanceof HTMLElement) {
@@ -59,16 +51,6 @@ export class Drawer extends React.Component<DrawerProps,any> {
         }
     }
     /* component lifecycle */
-
-    /**
-     * 即売会情報をイベントメニューアイテムに変換する
-     */
-    protected appEventToEventItem = (event: AppSaleEvent) => {
-        return {
-            label: event.eventName,
-            value: `${event.eventId}`
-        };
-    }
 
     /**
      * 即売会を変更したときのイベント
@@ -130,7 +112,7 @@ export class Drawer extends React.Component<DrawerProps,any> {
         });
         return (
             <div className="demo-drawer mdl-layout__drawer">
-                <span className="demo-drawer__title mdl-layout-title">M3 Demo Playlist</span>
+                <span className="demo-drawer__title mdl-layout-title">{Const.Message.NAME_APP_EN}</span>
                 <section className="demo-drawer__section">
                     <h5 className="demo-drawer__section-title">即売会</h5>
                     <div className="demo-event-dropdown">

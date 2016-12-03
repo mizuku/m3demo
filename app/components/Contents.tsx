@@ -36,6 +36,17 @@ export class Contents extends React.Component<ContentsProps, any> {
         this.props.turnToPage(toPage);
     }
 
+    /**
+     * お気に入り変更とともに通知を行う
+     */
+    changeFavoriteWithNotification = (eventId: number, demo: Demo, isFavorite: boolean): void => {
+        let notification = document.querySelector(".mdl-js-snackbar");
+        (notification as any).MaterialSnackbar.showSnackbar({
+            message: isFavorite ? "お気に入りしました" : "お気に入り解除しました"
+        });
+        this.props.changeFavorite(eventId, demo, isFavorite);
+    }
+
     /* render */
     render(): JSX.Element {
         return (
@@ -44,7 +55,7 @@ export class Contents extends React.Component<ContentsProps, any> {
                 <DemoList eventId={this.props.eventId}
                     demos={this.props.demos}
                     getEmbedUrl={this.props.getEmbedUrl}
-                    changeFavorite={this.props.changeFavorite}
+                    changeFavorite={this.changeFavoriteWithNotification}
                     />
                 <Pagination
                     currentPage={this.props.currentPage}

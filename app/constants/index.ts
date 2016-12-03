@@ -138,7 +138,14 @@ export namespace Service {
     export const SOUND_CLOUD_TOKEN_FILE: string = "./sc.to";
 }
 
+/**
+ * Message の定義
+ */
 export namespace Message {
+    /** アプリケーション名 (日本語) */
+    export const NAME_APP_JP = "M3 視聴音源 プレイヤー";
+    /** アプリケーション名 (英語) */
+    export const NAME_APP_EN = "M3 demo player";
     /** システムとして対応していない形式エラー */
     export const ERROR_UNDEFINED_TYPE = "未対応の形式です。こちらまでお問い合わせください。";
 }

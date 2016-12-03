@@ -1,5 +1,6 @@
 import * as React from "react"
 
+import * as Const from "../constants"
 import { Menu, MenuItem } from "./Menu"
 
 export interface HeaderProps {
@@ -55,7 +56,7 @@ export class Header extends React.Component<HeaderProps,any> {
         return (
             <header className="demo-header mdl-layout__header mdl-layout__header--waterfall">
                 <div className="mdl-layout__header-row">
-                    <h1 className="demo-header__title mdl-layout-title">M3 試聴音源 プレイリスト</h1>
+                    <h1 className="demo-header__title mdl-layout-title">{Const.Message.NAME_APP_JP}</h1>
                     <div className="mdl-layout-spacer"></div>
                     <form onSubmit={this.onSubmit}
                         className="demo-header__search-textfield mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--align-right">
