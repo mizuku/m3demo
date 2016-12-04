@@ -43,6 +43,9 @@
     },
     "react/react-addons-css-transition-group.d.ts": {
       "ref": "c3daad4d0547d301ce5dad25138216fa0a30d547"
+    },
+    "node/node.d.ts": {
+      "ref": "a84e3f1af08e57bd3911c3cb6d13df89400def3d"
     }
   }
 }
